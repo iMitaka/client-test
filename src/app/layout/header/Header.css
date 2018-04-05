@@ -1,0 +1,19 @@
+.logo {
+    text-align: center;
+    padding: 20px
+  }
+
+  .image-background {
+    background-color: transparent;
+    border: 0px;
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+
+  #header {
+    background: rgb(240, 143, 238); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgb(201, 201, 201),rgb(105, 59, 185)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(240, 143, 238),rgb(105, 59, 185)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(240, 143, 238),rgb(105, 59, 185)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(255, 255, 255),rgb(190, 190, 190)); /* Standard syntax */
+  }
+  

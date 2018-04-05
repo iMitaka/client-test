@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+
+.row {
+  margin: 0px !important
+}
+
+hr {
+  border-top: 1px solid rgb(192, 188, 188) !important;
+}
+
+.no-padding {
+  padding: 0px !important
+}
+
+
