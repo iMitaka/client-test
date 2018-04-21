@@ -7,7 +7,7 @@ export default class ImageInTheBox extends Component {
         return (
             <div className="container-img">
                 <img src={this.props.img} className="img-thumbnail fill" alt="thumbnail"></img>
-                <div class="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
+                <div className="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
             </div>
         );
     }
