@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as nomenclatureService from '../../../../../../services/nomenclature-service'
 
-export default class Towns extends Component {
+export default class Countries extends Component {
     constructor(props) {
         super(props)
 
@@ -10,11 +10,10 @@ export default class Towns extends Component {
         }
 
         this.handleInputChange = this.handleInputChange.bind(this)
-        this.loadAll = this.loadAll.bind(this)
     }
 
-    loadAll(id) {
-        nomenclatureService.getTowns(id)
+    componentDidMount() {
+        nomenclatureService.getCountries()
         .then(res => res.json())
         .then((data) => this.setState({ Countries: data }))
         .catch((err) => console.log(err))
@@ -30,10 +29,6 @@ export default class Towns extends Component {
         });
     }
 
-    componentWillReceiveProps(newProps) {
-            this.loadAll(newProps.countryId)
-    }
-
     render() {
         let options = this.state.Countries.map((x) => {
             return (
@@ -42,7 +37,7 @@ export default class Towns extends Component {
         })
         return (
             <div className="text-center">
-                <strong >Град</strong>
+                <strong>Държава</strong>
                 <select className="form-control" name={this.props.name} onChange={this.props.onChange} value={this.props.value}>
                 <option value="0" disabled={this.props.disableEmpty}>{this.props.empltyLabel}</option>
                     {options}

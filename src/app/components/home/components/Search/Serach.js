@@ -6,6 +6,7 @@ import Currency from './components/currency'
 import Towns from './components/towns'
 import Neighbourhood from './components/neighbourhood'
 import './Search.css'
+import Country from './components/countries'
 
 class Search extends Component {
 
@@ -24,7 +25,8 @@ class Search extends Component {
       CurrencyId: 0,
       ApartamentTypeId: 0,
       TownId: 0,
-      NeighbourhoodId: 0
+      NeighbourhoodId: 0,
+      CountryId: 0
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -35,6 +37,14 @@ class Search extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
+
+    
+    if (name === "CountryId") {
+      this.setState({
+          TownId: 0,
+          NeighbourhoodId: 0
+      })
+  }
 
     this.setState({
       [name]: value
@@ -62,12 +72,17 @@ class Search extends Component {
         <br />
         <div className="row">
           <div className="col-md-12 no-padding">
-            <Towns name="TownId" value={this.state.TownId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
+            <Country name="CountryId" value={this.state.CountryId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 no-padding">
-            <Neighbourhood name="NeighbourhoodId" value={this.state.NeighbourhoodId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
+            <Towns name="TownId" value={this.state.TownId} countryId={this.state.CountryId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12 no-padding">
+            <Neighbourhood name="NeighbourhoodId" value={this.state.NeighbourhoodId} townId={this.state.TownId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
           </div>
         </div>
         <div className="row">

@@ -13,7 +13,8 @@ export default class Currency extends Component {
     }
 
     componentDidMount() {
-        nomenclatureService.getCurrency()
+        nomenclatureService.getCurency()
+        .then(res => res.json())
         .then((data) => this.setState({ Countries: data }))
     }
 
@@ -30,7 +31,7 @@ export default class Currency extends Component {
     render() {
         let options = this.state.Countries.map((x) => {
             return (
-                <option key={x.Id} value={x.Id}>{x.Name}</option>
+                <option key={x.id} value={x.id}>{x.name}</option>
             )
         })
         return (

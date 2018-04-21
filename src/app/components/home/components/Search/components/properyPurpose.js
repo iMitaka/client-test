@@ -13,7 +13,8 @@ export default class ProperyPurpose extends Component {
     }
 
     componentDidMount() {
-        nomenclatureService.getProperyPurpose()
+        nomenclatureService.getOfferType()
+        .then(res => res.json())
         .then((data) => this.setState({ Countries: data }))
     }
 
@@ -30,7 +31,7 @@ export default class ProperyPurpose extends Component {
     render() {
         let options = this.state.Countries.map((x) => {
             return (
-                <option key={x.Id} value={x.Id}>{x.Name}</option>
+                <option key={x.id} value={x.id}>{x.name}</option>
             )
         })
         return (

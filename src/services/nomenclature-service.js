@@ -4,42 +4,61 @@ const GET = 'GET'
 export const UPLOAD_PHOTO_URL = DOMAIN_URL + '/api/Photo'
 
 export function getCountries() {
-    return httpService('/api/Country', GET)
+    return httpService('/Countries/GetAllCountries', GET)
 }
 
-export function getPhotos(propertyId) {
-    return httpService('/api/Photo?propertyId=' + propertyId, GET)
+//................................................................................
+
+export function getTowns(countryId) {
+    return httpService('/Towns/GetTownsByCountryId?countryId=' + countryId, GET)
 }
 
-export function getTowns() {
-    return httpService('/api/Town', GET)
+//...............................................
+
+export function getNeighbourhood(townId) {
+    return httpService('/Neighborhoods/GetNeighborhoodsByTownId?townId=' + townId, GET)
 }
 
-export function getNeighbourhood() {
-    return httpService('/api/Neighbourhood', GET)
+//..........................................................
+
+export function getOfferType() {
+    return httpService('/OfferTypes/GetOfferTypes', GET)
 }
 
-export function getCurrency() {
-    return httpService('/api/Currency', GET)
-}
 
-export function getProperyPurpose() {
-    return httpService('/api/ProperyPurpose', GET)
-}
+//..........................................................
 
 export function getPropertyType() {
-    return httpService('/api/PropertyType', GET)
+    return httpService('/PropertyTypes/GetPropertyTypes', GET)
 }
 
-export function getBuildingStatus() {
-    return httpService('/api/BuildingStatus', GET)
+//..........................................................
+
+export function getCurency() {
+    return httpService('/Curencies/GetCurencies', GET)
 }
 
-export function getApartamentType() {
-    return httpService('/api/ApartamentType', GET)
-}
+//..........................................................
 
 export function getBuildingType() {
-    return httpService('/api/BuildingType', GET)
+    return httpService('/BuildingTypes/GetBuildingTypes', GET)
+}
+
+//..........................................................
+
+export function getPropertyStatus() {
+    return httpService('/PropertyStatuses/GetPropertyStatuses', GET)
+}
+
+//..........................................................
+
+export function getExtras() {
+    return httpService('/Extras/GetAllExtras', GET)
+}
+
+//..........................................................
+
+export function getApartamentType() {
+    return httpService('/ApartamentTypes/GetApartamentTypes', GET)
 }
 

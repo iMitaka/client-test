@@ -10,11 +10,14 @@ export default class Neighbourhood extends Component {
         }
 
         this.handleInputChange = this.handleInputChange.bind(this)
+        this.loadAll = this.loadAll.bind(this)
     }
 
-    componentDidMount() {
-        nomenclatureService.getNeighbourhood()
+    loadAll(id) {
+        nomenclatureService.getNeighbourhood(id)
+        .then(res => res.json())
         .then((data) => this.setState({ Countries: data }))
+        .catch((err) => console.log(err))
     }
 
     handleInputChange(event) {
@@ -27,10 +30,14 @@ export default class Neighbourhood extends Component {
         });
     }
 
+    componentWillReceiveProps(newProps) {
+            this.loadAll(newProps.townId)
+    }
+
     render() {
         let options = this.state.Countries.map((x) => {
             return (
-                <option key={x.Id} value={x.Id}>{x.Name}</option>
+                <option key={x.id} value={x.id}>{x.name}</option>
             )
         })
         return (

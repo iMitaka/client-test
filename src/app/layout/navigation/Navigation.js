@@ -29,9 +29,9 @@ export default class Navigation extends Component {
                         {/* <LinkContainer to={RoutesConstants.newsPath}>
                             <NavItem><strong>{NavigationMenuConstants.news}</strong></NavItem>
                         </LinkContainer> */}
-                        <LinkContainer to={RoutesConstants.agentsPath}>
+                        {/* <LinkContainer to={RoutesConstants.agentsPath}>
                             <NavItem><strong>{NavigationMenuConstants.agents}</strong></NavItem>
-                        </LinkContainer>
+                        </LinkContainer> */}
                         {/* <NavDropdown title={NavigationMenuConstants.homesTypes} id="basic-nav-dropdown">
                             <LinkContainer to={RoutesConstants.propertiesPath}>
                                 <MenuItem>

@@ -1,9 +1,11 @@
-import { httpServiceWithData } from './http-service'
+import { httpServiceWithData, httpService } from './http-service'
+const GET = 'GET'
+const POST = 'POST'
 
 export function getAllPropertiesByFilter(filter, page) {
-    return httpServiceWithData('/api/Property?type=client&page=' + page, "POST", filter)
+    return httpServiceWithData('/Properties/GetProperties?page=' + page + '&totalCount=9&type=client', "POST", filter)
 }
 
 export function getPropertyDetails(id) {
-    return httpServiceWithData('/api/Property/Details?id=' + id, "GET")
+    return httpService('/Properties/GetProperty?id=' + id, GET)
 }

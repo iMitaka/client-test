@@ -4,6 +4,7 @@ import PropertyCard from '../../../shared/components/card/PropertyCard'
 import Serach from './components/Search/Serach'
 import { getAllPropertiesByFilter } from '../../../services/property-service';
 import Pagination from "react-js-pagination";
+import { DOMAIN_URL } from '../../../shared/constants/UrlConstants'
 
 export default class Home extends Component {
     constructor(props) {
@@ -23,18 +24,24 @@ export default class Home extends Component {
     handlePageChange(pageNumber) {
         this.setState({ activePage: pageNumber });
         getAllPropertiesByFilter(this.state.filter, pageNumber)
+            .then(res => res.json())
             .then((result) => this.setState({ properties: result }))
+            .catch((err) => console.log(err))
     }
 
     componentDidMount() {
         getAllPropertiesByFilter(null, this.state.activePage)
+            .then(res => res.json())
             .then((result) => this.setState({ properties: result }))
+            .catch((err) => console.log(err))
     }
 
     search(filter) {
         this.setState({ filter: filter });
         getAllPropertiesByFilter(filter, this.state.activePage)
+            .then(res => res.json())
             .then((result) => this.setState({ properties: result }))
+            .catch((err) => console.log(err))
     }
 
     propertyDetails(id) {
@@ -43,18 +50,25 @@ export default class Home extends Component {
 
     render() {
         let properties = this.state.properties.map((property, index) => {
+            let rowClass = ''
+            if ((index + 1) % 3 === 0) {
+                rowClass = "row"
+            }
+
             return (
-                <div key={index} onClick={() => this.propertyDetails(property.Id)} className="col-sm-4 no-padding">
-                    <PropertyCard img={'data:image/' + property.Type + ';base64,' + property.Photo}
-                        price={property.Price}
-                        title={property.Name}
-                        address={property.Address}
-                        properyType={property.PropertyType}
-                        properyArea={property.Area}
-                        properyBedroom={property.BedroomCount}
-                        properyBathroom={property.BathroomCount}
-                        status={property.OfferType}
-                        isVip={property.IsVIP} />
+                <div key={index} className={rowClass}>
+                    <div key={index} onClick={() => this.propertyDetails(property.id)} className="col-sm-4 no-padding">
+                        <PropertyCard img={DOMAIN_URL + '/' + property.id + '/' + (property.photos.length >= 1 ? property.photos[0].path : '')}
+                            price={property.price + ' ' + property.curency}
+                            title={property.title}
+                            address={property.neighborhood + ', ' + property.town + ', ' + property.country}
+                            properyType={property.propertyType}
+                            properyArea={property.area}
+                            properyBedroom={property.bedroomsCount}
+                            properyBathroom={property.bathroomsCount}
+                            status={property.offerType}
+                            isVip={property.isVIP} />
+                    </div>
                 </div>
             )
         })
@@ -85,8 +99,8 @@ export default class Home extends Component {
                             <div className="text-center">
                                 <Pagination
                                     activePage={this.state.activePage}
-                                    itemsCountPerPage={6}
-                                    totalItemsCount={this.state.properties.length >= 1 ? this.state.properties[0].Count : 0}
+                                    itemsCountPerPage={9}
+                                    totalItemsCount={this.state.properties.length >= 1 ? this.state.properties[0].totalCount : 0}
                                     pageRangeDisplayed={5}
                                     onChange={this.handlePageChange}
                                 />

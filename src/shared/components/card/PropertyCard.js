@@ -6,12 +6,12 @@ import logo from '../../../resources/images/logo.png'
 export default class PropertyCard extends Component {
 
     checkStatus() {
-        let backgroundStyleClass = 'status-color-';
-        if (this.props.status === 'Под наем') {
-            backgroundStyleClass += 'green';
-        } else if (this.props.status === 'Покупка') {
-            backgroundStyleClass += 'blue';
-        }
+        let backgroundStyleClass = 'status-color-green';
+        // if (this.props.status === 'Под наем') {
+        //     backgroundStyleClass += 'green';
+        // } else if (this.props.status === 'Покупка') {
+        //     backgroundStyleClass += 'blue';
+        // }
 
         return (
             <div className={'top-right ' + backgroundStyleClass}>
