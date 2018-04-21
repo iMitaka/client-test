@@ -7,9 +7,9 @@ export default class PropertyCard extends Component {
 
     checkStatus() {
         let backgroundStyleClass = 'status-color-green';
-        // if (this.props.status === 'Под наем') {
+        // if (this.props.status.toUpperCase() === 'ПОКУПКА') {
         //     backgroundStyleClass += 'green';
-        // } else if (this.props.status === 'Покупка') {
+        // } else if (this.props.status.toUpperCase() === 'НАЕМ') {
         //     backgroundStyleClass += 'blue';
         // }
 
@@ -39,7 +39,7 @@ export default class PropertyCard extends Component {
                         <img src={this.props.img} className="img-thumbnail card-fill" alt="thumbnail"></img>
                         {status}
                         <div className="bottom-right">{this.props.price}</div>
-                        <div class="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
+                        <div className="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
                         {vip}
                     </div>
                     <div className="card-title text-field">

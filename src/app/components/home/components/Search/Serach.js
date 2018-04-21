@@ -15,7 +15,7 @@ class Search extends Component {
 
     this.state = {
       PropertyTypeId: 0,
-      PropertyPurposeId: 0,
+      OfferTypeId: 0,
       PriceFrom: 0,
       PriceTo: 0,
       BedroomsFrom: 0,
@@ -87,7 +87,7 @@ class Search extends Component {
         </div>
         <div className="row">
           <div className="col-md-12 no-padding">
-            <ProperyPurpose name="PropertyPurposeId" value={this.state.PropertyPurposeId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
+            <ProperyPurpose name="OfferTypeId" value={this.state.OfferTypeId} onChange={this.handleInputChange} disableEmpty={false} empltyLabel={'Всички'} />
           </div>
         </div>
         <div className="row">
@@ -147,7 +147,7 @@ class Search extends Component {
         </div>
         <hr />
         <div className="row text-center">
-          <button className="btn-lg btn-info search-button" onClick={this.serach}><strong>Търсене</strong></button>
+          <button className="btn-lg button-color search-button" onClick={this.serach}><strong>Търсене</strong></button>
         </div>
         <br />
       </div>

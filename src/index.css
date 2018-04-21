@@ -21,4 +21,9 @@ hr {
   padding: 0px !important
 }
 
+.img-thumbnail {
+  background-color: transparent !important;
+  border: none !important
+}
+
 

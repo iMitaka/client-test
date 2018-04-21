@@ -6,7 +6,8 @@ export default class Neighbourhood extends Component {
         super(props)
 
         this.state = {
-            Countries: []
+            Countries: [],
+            townId: 0
         }
 
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -31,7 +32,10 @@ export default class Neighbourhood extends Component {
     }
 
     componentWillReceiveProps(newProps) {
+        if (newProps.townId != this.state.townId) {
             this.loadAll(newProps.townId)
+            this.setState({ townId: newProps.townId })
+        }
     }
 
     render() {

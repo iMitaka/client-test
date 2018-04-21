@@ -15,7 +15,7 @@ export default class Photo extends Component {
                             src={this.props.img}
                             alt="фараимоти"
                         />
-                        <div class="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
+                        <div className="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
                     </div>
                     </div>
                 </div>

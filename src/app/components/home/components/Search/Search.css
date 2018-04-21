@@ -16,3 +16,9 @@ input::-webkit-inner-spin-button {
 .search-button {
     box-shadow: 5px 5px 15px grey;
 }
+
+.button-color {
+    background-color: rgb(131, 62, 102) !important;
+    border: none !important;
+    color: white !important
+}

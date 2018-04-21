@@ -31,5 +31,5 @@ li[role=presentation] a:hover {
 .navbar-header {
     color: white;
     font-size: 150%;
-    padding-left: 1%
+    /* padding-left: 3% */
 }

@@ -8,7 +8,7 @@
 }
 
 .card-title {
-    color: #428bca;
+    color: #380438;
     padding-left: 3%;
     padding-right: 3%;
     padding-bottom: 3%;
@@ -82,11 +82,11 @@
 }
 
 .status-color-blue {
-    background-color: #3b5998;
+    background-color: #bd69bd;
 }
 
 .status-color-green {
-    background-color: #528d47;
+background-color: #bd69bd;
 }
 
 /* Bottom right text */
@@ -98,7 +98,7 @@
     padding-top: 1%;
     padding-bottom: 1%;
     padding-right: 4%;
-    background-color: #3b5998;
+    background-color: #bd69bd;;
     font-size: 115%;
     box-shadow: 5px 0 4px #646470;
     z-index: 5

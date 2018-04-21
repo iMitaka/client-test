@@ -10,7 +10,7 @@ export default class Contacts extends Component {
                 </div>
             ))
             return (
-                <div key={contactIndex} className="col-lg-6 no-padding">
+                <div key={contactIndex} className="col-lg-12 no-padding">
                     <div>
                         {contact.country}
                     </div>
@@ -20,6 +20,10 @@ export default class Contacts extends Component {
                     <div>
                         {contact.address}
                     </div>
+                    <div>
+                        {contact.address2}
+                    </div>
+                    <hr />
                     {phones}
                     <div>
                         {contact.email}

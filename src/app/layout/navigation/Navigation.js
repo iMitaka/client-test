@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import NavigationMenuConstants from '../../../shared/constants/nav/NavigationMenuConstants'
 import RoutesConstants from '../../../shared/constants/RoutesConstants'
 import { APP_TITLE } from '../../../shared/constants/AppConstants'
-
+import Contacts from '../footer/components/Contacts'
+import facebookLogo from '../../../resources/images/contacts/facebook.png'
 export default class Navigation extends Component {
     render() {
         return (
@@ -26,6 +27,16 @@ export default class Navigation extends Component {
                         <LinkContainer to={RoutesConstants.homePath}>
                             <NavItem><strong>{NavigationMenuConstants.home}</strong></NavItem>
                         </LinkContainer>
+                        {/* <NavItem></NavItem>
+                        <NavItem></NavItem>
+                        <NavItem>
+                            <a href='https://www.facebook.com/Fara-Imoti-%D0%A4%D0%B0%D1%80%D0%B0-%D0%98%D0%BC%D0%BE%D1%82%D0%B8-143809552924434/' target="_blank" className="social-media-img-padding">
+                                <img src={facebookLogo} className="img-fluid" alt="facebook"></img>
+                            </a>
+                        </NavItem> */}
+                        {/* <LinkContainer to={'/'}>
+                            <NavItem><strong>Контакти</strong></NavItem>
+                        </LinkContainer> */}
                         {/* <LinkContainer to={RoutesConstants.newsPath}>
                             <NavItem><strong>{NavigationMenuConstants.news}</strong></NavItem>
                         </LinkContainer> */}

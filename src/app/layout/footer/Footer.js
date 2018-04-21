@@ -10,10 +10,10 @@ export default class Footer extends Component {
             <div className="footer">
                 <div className="container">
                     <div className="row footer-padding">
-                        <div className="col-lg-4">
+                        {/* <div className="col-lg-4">
                             <Contacts />
-                        </div>
-                        <div className="col-lg-8">
+                        </div> */}
+                        <div className="col-lg-12">
                             <AboutUs />
                             {/* <SocialMediaContacts /> */}
                         </div>

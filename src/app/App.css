@@ -1,3 +1,30 @@
 .app-background-color {
   background-color: #ddc9d5 !important;
 }
+
+.feedback {
+  background-color : rgb(173, 113, 184);
+  color: white;
+  border: none;
+  pointer-events: none
+}
+
+#mybutton {
+  position: fixed;
+  bottom: -4px;
+  right: 0.5px;
+  z-index: 9999999;
+}
+
+.pagination>.active>a {
+  background-color: rebeccapurple !important;
+  border-color: rebeccapurple !important
+}
+
+.pagination>li>a {
+  color: black !important
+}
+
+.pagination>.active>a {
+  color: white !important
+}
