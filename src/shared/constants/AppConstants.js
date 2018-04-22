@@ -1,1 +1,1 @@
-export const APP_TITLE = 'ФараИмоти'
+export const APP_TITLE = 'Фара Имоти'
