@@ -23,7 +23,7 @@ export default class PropertyCard extends Component {
     checkVip() {
         if (this.props.isVip) {
             return (
-                <div className="top-left"><strong>{CardConstants.vip}</strong></div>
+                <div className="top-left"><strong>ТОП</strong></div>
             )
         }
     }
