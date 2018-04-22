@@ -28,7 +28,6 @@ export default class PropertyDetails extends Component {
         getPropertyDetails(this.state.Id)
             .then(res => res.json())
             .then((result) => {
-                console.log(result)
                 this.setState({ property: result })
                 // document.getElementById('global-title').content = result.title
                 // document.getElementById('global-image').content = DOMAIN_URL + '/' + result.id + '/' + (result.photos.length >= 1 ? result.photos[0].path : '')
@@ -58,7 +57,7 @@ export default class PropertyDetails extends Component {
         if (this.state.property.extras) {
             extras = this.state.property.extras.map((extra, index) => {
                 return (
-                    <div>{'- ' + extra}</div>
+                    <div  key={index}>{'- ' + extra}</div>
                 )
             })
         }
