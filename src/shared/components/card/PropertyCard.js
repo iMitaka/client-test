@@ -51,6 +51,11 @@ export default class PropertyCard extends Component {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-sm-12 card-body-props no-padding">
+                                <span><strong>{'Код на обява: '}</strong></span><span className="no-bold">{' ' + this.props.code}</span>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12 card-body-props no-padding">
                                 <span><strong>{CardConstants.homeTypes}</strong></span><span className="no-bold">{' ' + this.props.properyType}</span>
                             </div>
                         </div>

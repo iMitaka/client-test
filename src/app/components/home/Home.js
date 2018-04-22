@@ -59,6 +59,7 @@ export default class Home extends Component {
                 <div key={index} className={rowClass}>
                     <div key={index} onClick={() => this.propertyDetails(property.id)} className="col-sm-4 no-padding">
                         <PropertyCard img={DOMAIN_URL + '/' + property.id + '/' + (property.photos.length >= 1 ? property.photos[0].path : '')}
+                            code={property.code}
                             price={property.price + ' ' + property.curency}
                             title={property.title}
                             address={property.neighborhood + ', ' + property.town + ', ' + property.country}
@@ -88,7 +89,7 @@ export default class Home extends Component {
                         <div className="row">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <strong>ТОП Имоти</strong>
+                                    <strong>Всички имоти</strong>
                                 </div>
                                 <hr />
                             </div>

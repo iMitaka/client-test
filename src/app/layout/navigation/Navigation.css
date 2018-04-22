@@ -1,6 +1,10 @@
 .dropdown-menu .active a {
-    color: black;
-    background-color: transparent
+    color: transparent;
+    background-color: transparent! important
+}
+
+.active {
+    background-color: transparent !important
 }
 
 .navbar-inverse .navbar-nav li a {
@@ -20,7 +24,7 @@ li[role=presentation] a:hover {
 }
 
 .dropdown-menu {
-    background-color: black;
+    background-color: transparent !important;
 }
 
 .dropdown-menu-text {
@@ -36,8 +40,4 @@ li[role=presentation] a:hover {
 
 .goog-te-menu-value {
     color: black !important
-}
-
-.active {
-    color: transparent !important
 }

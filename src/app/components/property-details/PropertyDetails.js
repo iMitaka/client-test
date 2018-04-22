@@ -53,6 +53,16 @@ export default class PropertyDetails extends Component {
             })
         }
 
+        let extras;
+
+        if (this.state.property.extras) {
+            extras = this.state.property.extras.map((extra, index) => {
+                return (
+                    <div>{'- ' + extra}</div>
+                )
+            })
+        }
+
         return (
             <div className="details">
                 <div className="row text-center">
@@ -172,6 +182,16 @@ export default class PropertyDetails extends Component {
                                     </div>
                                     <div className="col-md-9">
                                         {this.state.property.propertyStatus}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <strong> Екстри на имота: </strong>
+                                    </div>
+                                    <div className="col-md-9">
+                                        {extras}
                                     </div>
                                 </div>
                             </div>
