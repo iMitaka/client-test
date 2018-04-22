@@ -28,3 +28,7 @@
 .pagination>.active>a {
   color: white !important
 }
+
+a {
+  background-color: transparent !important
+}
