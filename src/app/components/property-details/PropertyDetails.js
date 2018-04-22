@@ -62,13 +62,24 @@ export default class PropertyDetails extends Component {
             })
         }
 
+        let address = '';
+        if (this.state.property.neighborhood) {
+            address += (this.state.property.neighborhood + ', ')
+        }
+        if(this.state.property.town){
+            address += (this.state.property.town + ', ')
+        }
+        if(this.state.property.country){
+            address += (this.state.property.country)
+        }
+
         return (
             <div className="details">
                 <div className="row text-center">
                     <h2><strong>{this.state.property.title}</strong></h2>
                 </div>
                 <div className="row  text-center">
-                    {this.state.property.neighborhood + ', ' + this.state.property.town + ', ' + this.state.property.country}
+                    {address}
                 </div>
                 <hr />
                 <div className="row">
@@ -187,10 +198,20 @@ export default class PropertyDetails extends Component {
                             <div className="col-md-3">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <strong> Екстри на имота: </strong>
+                                        <strong>Екстри на имота: </strong>
                                     </div>
                                     <div className="col-md-9">
                                         {extras}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <strong>Етаж: </strong>
+                                    </div>
+                                    <div className="col-md-9">
+                                        {this.state.property.floor && this.state.property.allFloorsCount ? this.state.property.floor + ' от общо ' + this.state.property.allFloorsCount + ' етажа' : ''}
                                     </div>
                                 </div>
                             </div>

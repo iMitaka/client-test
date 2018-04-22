@@ -55,6 +55,17 @@ export default class Home extends Component {
                 rowClass = "row"
             }
 
+            let address = '';
+            if (property.neighborhood) {
+                address += (property.neighborhood + ', ')
+            }
+            if (property.town) {
+                address += (property.town + ', ')
+            }
+            if (property.country) {
+                address += (property.country)
+            }
+
             return (
                 <div key={index} className={rowClass}>
                     <div key={index} onClick={() => this.propertyDetails(property.id)} className="col-sm-4 no-padding">
@@ -62,7 +73,7 @@ export default class Home extends Component {
                             code={property.code}
                             price={property.price + ' ' + property.curency}
                             title={property.title}
-                            address={property.neighborhood + ', ' + property.town + ', ' + property.country}
+                            address={address}
                             properyType={property.propertyType}
                             properyArea={property.area}
                             properyBedroom={property.bedroomsCount}
