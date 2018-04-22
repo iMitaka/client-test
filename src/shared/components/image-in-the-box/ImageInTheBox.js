@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ImageInTheBox.css'
-import logo from '../../../resources/images/logo.png'
+import logo from '../../../resources/images/logo2.png'
 
 export default class ImageInTheBox extends Component {
     render() {

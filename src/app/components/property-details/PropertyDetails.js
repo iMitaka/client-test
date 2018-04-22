@@ -30,8 +30,8 @@ export default class PropertyDetails extends Component {
             .then((result) => {
                 console.log(result)
                 this.setState({ property: result })
-                document.getElementById('global-title').content = result.title
-                document.getElementById('global-image').content = DOMAIN_URL + '/' + result.id + '/' + (result.photos.length >= 1 ? result.photos[0].path : '')
+                // document.getElementById('global-title').content = result.title
+                // document.getElementById('global-image').content = DOMAIN_URL + '/' + result.id + '/' + (result.photos.length >= 1 ? result.photos[0].path : '')
             })
             .catch(() => this.props.history.push('/error'))
 

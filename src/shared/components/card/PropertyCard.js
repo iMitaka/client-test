@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './PropertyCard.css'
 import CardConstants from '../../constants/card/CardConstants'
-import logo from '../../../resources/images/logo.png'
+import logo from '../../../resources/images/logo2.png'
 
 export default class PropertyCard extends Component {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Header.css'
-import logo from '../../../resources/images/logo.png'
+import logo from '../../../resources/images/logo2.png'
 import { Link } from 'react-router-dom'
 import Contacts from '../footer/components/Contacts'
 import headerImg from '../../../resources/images/header.jpg'

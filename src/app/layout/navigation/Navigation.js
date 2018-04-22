@@ -27,6 +27,8 @@ export default class Navigation extends Component {
                         <LinkContainer to={RoutesConstants.homePath}>
                             <NavItem><strong>{NavigationMenuConstants.home}</strong></NavItem>
                         </LinkContainer>
+                        <NavItem><div id="google_translate_element"></div></NavItem>
+                        
                         {/* <NavItem></NavItem>
                         <NavItem></NavItem>
                         <NavItem>
