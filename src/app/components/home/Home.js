@@ -44,8 +44,9 @@ export default class Home extends Component {
             .catch((err) => console.log(err))
     }
 
-    propertyDetails(id) {
+    propertyDetails(id, photo, title) {
         this.props.history.push('/details/' + id)
+        // this.props.history.push('/details/' + id + '?id=' + id + '&photo=' + photo + '&title=' + title)
     }
 
     render() {
@@ -68,7 +69,10 @@ export default class Home extends Component {
 
             return (
                 <div key={index} className={rowClass}>
-                    <div key={index} onClick={() => this.propertyDetails(property.id)} className="col-sm-4 no-padding">
+                    <div key={index} onClick={() => this.propertyDetails(property.id, 
+                        (property.photos.length >= 1 ? property.photos[0].path : ''),
+                        property.title)} 
+                        className="col-sm-4 no-padding">
                         <PropertyCard img={DOMAIN_URL + '/' + property.id + '/' + (property.photos.length >= 1 ? property.photos[0].path : '')}
                             code={property.code}
                             price={property.price + ' ' + property.curency}

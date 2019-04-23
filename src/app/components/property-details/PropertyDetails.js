@@ -5,6 +5,13 @@ import { getPropertyDetails } from '../../../services/property-service'
 import Photo from './components/Photo'
 import { DOMAIN_URL } from '../../../shared/constants/UrlConstants'
 
+// const urlParams = new URLSearchParams(window.location.search);
+// const photo = urlParams.get('photo');
+// const idProp = urlParams.get('id');
+// const title = urlParams.get('title');
+// document.getElementById('global-title').content = title
+// document.getElementById('global-image').content = DOMAIN_URL + '/' + idProp + '/' + photo
+
 export default class PropertyDetails extends Component {
     constructor(props) {
         super(props)
@@ -29,8 +36,6 @@ export default class PropertyDetails extends Component {
             .then(res => res.json())
             .then((result) => {
                 this.setState({ property: result })
-                // document.getElementById('global-title').content = result.title
-                // document.getElementById('global-image').content = DOMAIN_URL + '/' + result.id + '/' + (result.photos.length >= 1 ? result.photos[0].path : '')
             })
             .catch(() => this.props.history.push('/error'))
 
@@ -57,7 +62,7 @@ export default class PropertyDetails extends Component {
         if (this.state.property.extras) {
             extras = this.state.property.extras.map((extra, index) => {
                 return (
-                    <div  key={index}>{'- ' + extra}</div>
+                    <div key={index}>{'- ' + extra}</div>
                 )
             })
         }
@@ -66,10 +71,10 @@ export default class PropertyDetails extends Component {
         if (this.state.property.neighborhood) {
             address += (this.state.property.neighborhood + ', ')
         }
-        if(this.state.property.town){
+        if (this.state.property.town) {
             address += (this.state.property.town + ', ')
         }
-        if(this.state.property.country){
+        if (this.state.property.country) {
             address += (this.state.property.country)
         }
 
