@@ -39,7 +39,7 @@ export default class PropertyCard extends Component {
                         <img src={this.props.img} className="img-thumbnail card-fill" alt="thumbnail"></img>
                         {status}
                         <div className="bottom-right">{this.props.price}</div>
-                        <div className="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>
+                        {this.props.id <= 149 && <div className="centered"><img src={logo} alt="logo" className="img-thumbnail fix-logo"></img></div>}
                         {vip}
                     </div>
                     <div className="card-title text-field">

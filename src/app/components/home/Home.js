@@ -74,6 +74,7 @@ export default class Home extends Component {
                         property.title)} 
                         className="col-sm-4 no-padding">
                         <PropertyCard img={DOMAIN_URL + '/' + property.id + '/' + (property.photos.length >= 1 ? property.photos[0].path : '')}
+                            id={property.id}
                             code={property.code}
                             price={property.price + ' ' + property.curency}
                             title={property.title}

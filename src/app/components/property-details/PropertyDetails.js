@@ -49,7 +49,7 @@ export default class PropertyDetails extends Component {
             photos = this.state.property.photos.map((photo, index) => {
                 return (
                     <div key={index} className="col-md-3" onClick={() => this.setImg(DOMAIN_URL + '/' + this.state.property.id + '/' + photo.path)}>
-                        <ImageInTheBox img={DOMAIN_URL + '/' + this.state.property.id + '/' + photo.path}></ImageInTheBox>
+                        <ImageInTheBox id={this.state.Id} img={DOMAIN_URL + '/' + this.state.property.id + '/' + photo.path}></ImageInTheBox>
                         <br />
                         <br />
                     </div>
@@ -183,7 +183,7 @@ export default class PropertyDetails extends Component {
                             <div className="col-md-3">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <strong>Строистелство</strong>
+                                        <strong>Строителство</strong>
                                     </div>
                                     <div className="col-md-10">
                                         {this.state.property.buildingType}
@@ -242,7 +242,7 @@ export default class PropertyDetails extends Component {
                     </div>
                     <br />
                     <div className="row text-center">
-                        <Photo img={this.state.photoImg} />
+                        <Photo img={this.state.photoImg} id={this.state.Id} />
                     </div>
                     <br />
                     <div className="row">
